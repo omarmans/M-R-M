@@ -1,0 +1,38 @@
+<div class="item" style="cursor: pointer">
+  <div routerLink="details/{{ item.id }}">
+    <img src="{{ item.image }}" alt="" />
+    <div class="body">
+      <h4>{{ item.title }}</h4>
+      <p>{{ item.description }}</p>
+    </div>
+  </div>
+
+  <div class="px-3 mb-2 d-flex justify-content-between align-items-center">
+    <button
+      (click)="addbutton = true"
+      *ngIf="!addbutton"
+      class="btn btn-primary"
+    >
+      Add To Cart
+    </button>
+    <div class="d-flex w-50" *ngIf="addbutton">
+      <input
+        min="1"
+        class="form-control"
+        type="number"
+        placeholder="Amount"
+        name=""
+        [(ngModel)]="amount"
+      />
+      <button
+        type="submit"
+        class="btn btn-primary"
+        (click)="AddItemToCart()"
+        (click)="addbutton = false"
+      >
+        Ok
+      </button>
+    </div>
+    <span>{{ item.price }}EUR</span>
+  </div>
+</div>

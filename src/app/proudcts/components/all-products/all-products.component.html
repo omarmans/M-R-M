@@ -1,0 +1,22 @@
+<div class="box mt-5" *ngIf="!Showing_Spinner">
+  <div class="my-2 w-25">
+    <app-select
+      [DetectedArray]="Catigore_Names"
+      [title]="'Categories'"
+      (SelectedData)="GettheNameOfCategoriesFromTEMP($event)"
+    ></app-select>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-12" *ngFor="let item of Product_items">
+      <!--fecth id from looping  -->
+      <app-item
+        [item]="item"
+        (senditem)="getItemfromItemComp($event)"
+      ></app-item>
+    </div>
+  </div>
+</div>
+
+<app-spinner *ngIf="Showing_Spinner"></app-spinner>
+<!-- [all]="true" -->

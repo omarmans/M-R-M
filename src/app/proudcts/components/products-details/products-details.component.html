@@ -1,0 +1,20 @@
+<div class="box" *ngIf="!spinner">
+  <div class="row">
+    <div class="col-md-5 col-sm-12">
+      <img src="{{ targetItem.image }}" alt="img" />
+    </div>
+    <div class="col-md-7 col-sm-12">
+      <div class="info">
+        <ul class="list-ubstyled">
+          <li><strong>Title:</strong>{{ targetItem.title }}</li>
+          <li><strong>Category:</strong>{{ targetItem.category }}</li>
+          <li><strong>Descriptaion:</strong>{{ targetItem.description }}</li>
+          <li><strong>Rate:</strong>{{ targetItem.rating.rate }}</li>
+          <li><strong>Count:</strong>{{ targetItem.rating.count }}</li>
+          <li><strong>Price:</strong>{{ targetItem.price }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<app-spinner *ngIf="spinner"></app-spinner>

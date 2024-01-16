@@ -1,0 +1,11 @@
+<label for="" class="my-1">{{ title }} : </label>
+<select class="form-control" (change)="DetectedData($event)">
+  <option value="All" selected>All</option>
+  <option
+    value="{{ name }}"
+    *ngFor="let name of DetectedArray"
+    TrackBy:identify
+  >
+    {{ name }}
+  </option>
+</select>
